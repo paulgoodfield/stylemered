@@ -11,23 +11,45 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="style.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700|Lato:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+        <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="wrapper">
+
+        	<header>
+
+        		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/global/logo.png" class="logo"></a>
+
+        		<nav>
+
+        			<ul class="clearfix">
+        				<li class="current-menu-item"><a href="#">Home</a></li>
+        				<li><a href="#">About</a></li>
+        				<li><a href="#">Case Studies</a></li>
+        				<li><a href="#">Clients</a></li>
+        				<li><a href="#">Packages</a></li>
+        				<li><a href="#">Tips &amp; Cheats</a></li>
+        				<li><a href="#">Contact Me</a></li>
+        				<li><a href="#">Blog</a></li>
+        			</ul>
+
+        		</nav>
+
+        	</header>
+
+        </div><!-- .wrapper -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
