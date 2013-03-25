@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body class="home">
+
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -43,6 +44,29 @@
         		</nav>
 
         	</header>
+
+        	<div class="main">
+
+        		<div class="content">
+
+        			<img src="<?php echo get_template_directory_uri(); ?>/img/home/catwalk.jpg" width="730" height="487">
+
+        		</div><!-- .content -->
+
+        		<aside>
+
+        			<h3>From the blog</h3>
+
+        			<article>
+
+        				<h4><a href="#">Article title</a></h4>
+        				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+        			</article>
+
+        		</aside>
+
+        	</div><!-- .main -->
 
         </div><!-- .wrapper -->
 
