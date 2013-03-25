@@ -22,7 +22,7 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="wrapper">
+        <div class="wrapper clearfix">
 
         	<header>
 
@@ -45,7 +45,7 @@
 
         	</header>
 
-        	<div class="main">
+        	<div class="main clearfix">
 
         		<div class="content">
 
@@ -60,13 +60,35 @@
         			<article>
 
         				<h4><a href="#">Article title</a></h4>
+                        <time datetime="2012-03-12">13th March 2013</time>
         				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
         			</article>
 
+                    <div class="twitter">
+
+                        <h3>From twitter</h3>
+
+                        <p>Pellentesque habitant morbi tristique <a href="#">senectus et netus</a> et malesuada fames ac turpis egestas.</p>
+                        <time>27 minutes ago</time>
+
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <time>3 hours ago</time>
+
+                    </div><!-- .twitter -->
+
         		</aside>
 
         	</div><!-- .main -->
+
+            <footer>
+
+                <ul class="clearfix">
+                    <li class="twitter"><a href="#"></a></li>
+                    <li class="facebook"><a href="#"></a></li>
+                </ul>
+
+            </footer>
 
         </div><!-- .wrapper -->
 
