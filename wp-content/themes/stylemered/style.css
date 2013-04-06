@@ -132,7 +132,7 @@ nav {
   text-transform: uppercase;
   margin: 1.5em 0 0 0;
   border-top: 1px solid #dddbdb;
-  padding: 1.5em 0 0 0;
+  padding: 1.5em 0;
   text-align: center;
 }
 nav ul {
@@ -155,18 +155,18 @@ nav a:hover, nav .current-menu-item a {
   color: #cf242a;
 }
 .main {
-  padding: 1.5em 0;
+  margin: 1.5em 0;
+  background: url(img/global/divider.gif) repeat-y 730px 0;
 }
 .content {
   float: left;
   width: 730px;
   padding-right: 30px;
-  border-right: 1px solid #dddbdb;
 }
 aside {
   float: left;
-  width: 200px;
-  margin-left: 30px;
+  width: 230px;
+  padding-left: 30px;
   color: #918e8e;
 }
 aside {
@@ -185,7 +185,7 @@ aside article h4, aside article time {
 aside time {
   display: block;
   font-size: 0.8em;
-  color: #aaa8a8;
+  color: #b7b5b5;
 }
 aside article p {
   margin-top: 0;
@@ -241,10 +241,20 @@ footer .facebook a {
 .page .content h1 {
   margin-top: 0;
 }
+.content img.alignleft {
+  float: left;
+  margin: 0 1.5em 1.5em 0;
+}
+.content img.alignright {
+  float: right;
+  margin: 0 0 1.5em 1.5em;
+}
 /* HOME --------------------------------------------------------------------- */
+.home .main {
+  background-image: none;
+}
 .home .content {
   padding: 0;
-  border: 0;
 }
 /* ==========================================================================
    Helper classes

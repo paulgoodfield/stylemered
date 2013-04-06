@@ -1,5 +1,12 @@
 $( window ).load( function()
 {
+	// EXTERNAL LINKS
+	$( 'a[rel=external]' ).click(function()
+	{
+		window.open( $( this ).attr( 'href' ) );
+		return false;
+	});
+
 	// HOMEPAGE SLIDESHOW
 	if ( $( 'body' ).hasClass( 'home' ) )
 	{

@@ -25,15 +25,15 @@
 
         		<nav>
 
-        			<ul class="clearfix">
-        				<li class="current-menu-item"><a href="#">Home</a></li>
-        				<li><a href="#">About Me</a></li>
-        				<li><a href="#">Editorial</a></li>
-        				<li><a href="#">Personal Styling</a></li>
-        				<li><a href="#">They Said</a></li>
-        				<li><a href="#">Contact Me</a></li>
-        				<li><a href="#">Blog</a></li>
-        			</ul>
+                    <?php
+                    $defaults = array(
+
+                        'menu'            => 'Primary Menu',
+                        'container'       => false
+                    );
+
+                    wp_nav_menu( $defaults );
+                    ?>
 
         		</nav>
 
