@@ -1,7 +1,7 @@
 $( window ).load( function()
 {
 	// EXTERNAL LINKS
-	$( 'a[rel=external]' ).click(function()
+	$( 'a[rel=external], .twitter a' ).click(function()
 	{
 		window.open( $( this ).attr( 'href' ) );
 		return false;

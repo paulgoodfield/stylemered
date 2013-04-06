@@ -9,9 +9,13 @@
         <title>Style Me Red</title>
         <meta name="description" content="">
 
-        <?php wp_head(); ?>
+        <?php
+        wp_head();
+
+        $class = $post->post_type.'-'.$post->post_name;
+        ?>
     </head>
-    <body <?php echo body_class(); ?>>
+    <body <?php echo body_class( $class ); ?>>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>

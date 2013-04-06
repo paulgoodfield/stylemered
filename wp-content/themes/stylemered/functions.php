@@ -197,6 +197,13 @@ function smr_post_edit_form_tag()
 }
 add_action( 'post_edit_form_tag', 'smr_post_edit_form_tag' );
 
+// CHANGE EXCERPT LENGTH
+function smr_excerpt_length( $length )
+{
+	return 25;
+}
+add_filter( 'excerpt_length', 'smr_excerpt_length', 999 );
+
 // CHANGE EXCERPT MORE
 function smr_excerpt_more( $more )
 {
