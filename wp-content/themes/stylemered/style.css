@@ -82,13 +82,18 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
 }
 body {
   font-family: 'Merriweather', serif;
   font-size: 1.6rem;
-  line-height: 1.3;
+  line-height: 1.5;
   font-weight: 400;
   color: #5e5b5b;
 }
@@ -102,7 +107,7 @@ a {
   color: #cf242a;
 }
 a:hover {
-  color: #e35d61;
+  color: #e77277;
 }
 h1, h2, h3 {
   color: #cf242a;
@@ -155,11 +160,14 @@ nav a:hover, nav .current-menu-item a {
 .content {
   float: left;
   width: 730px;
+  padding-right: 30px;
+  border-right: 1px solid #dddbdb;
 }
 aside {
   float: left;
   width: 200px;
   margin-left: 30px;
+  color: #918e8e;
 }
 aside {
   font-size: 1.4rem;
@@ -228,6 +236,15 @@ footer .facebook:hover {
 }
 footer .facebook a {
   background: url(img/global/facebook.png) no-repeat 0 0;
+}
+/* PAGE --------------------------------------------------------------------- */
+.page .content h1 {
+  margin-top: 0;
+}
+/* HOME --------------------------------------------------------------------- */
+.home .content {
+  padding: 0;
+  border: 0;
 }
 /* ==========================================================================
    Helper classes
