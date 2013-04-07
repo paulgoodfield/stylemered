@@ -31,25 +31,29 @@ while ( have_posts() ) : the_post();
 
 <?php endwhile; ?>
 
+<?php
+global $wp_query;
+
+$big = 999999999; // need an unlikely integer
+
+$args = array(
+	'base' 			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' 		=> '?paged=%#%',
+	'current' 		=> max( 1, get_query_var('paged') ),
+	'total' 		=> $wp_query->max_num_pages,
+	'prev_text'    	=> '&lt;',
+	'next_text'    	=> '&gt;'
+);
+$pagination = paginate_links( $args );
+?>
+
+<?php if ( $pagination != '' ) { ?>
 <nav class="pagination">
 
-	<?php
-	global $wp_query;
-
-	$big = 999999999; // need an unlikely integer
-
-	$args = array(
-		'base' 			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' 		=> '?paged=%#%',
-		'current' 		=> max( 1, get_query_var('paged') ),
-		'total' 		=> $wp_query->max_num_pages,
-		'prev_text'    	=> '&lt;',
-		'next_text'    	=> '&gt;'
-	);
-	echo paginate_links( $args );
-	?>
+	<?php echo $pagination; ?>
 
 </nav>
+<?php } ?>
 
 <?php else: ?>
 

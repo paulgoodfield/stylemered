@@ -197,6 +197,9 @@ aside ul {
   list-style: none;
   margin-bottom: 2.3em;
 }
+aside li {
+  margin: 0.5em 0;
+}
 footer {
   border-top: 1px solid #dddbdb;
   padding-top: 0.8em;
@@ -275,10 +278,15 @@ footer .facebook a {
   padding: 0;
 }
 /* BLOG --------------------------------------------------------------------- */
-.page-blog .content article {
-  padding-bottom: 1.8rem;
-  border-bottom: 1px solid #dddbdb;
-  margin-bottom: 1.8rem;
+.page-blog .content article, .pagination {
+  margin-top: 1.9rem;
+  border-top: 1px solid #dddbdb;
+  padding-top: 1.9rem;
+}
+.page-blog .content article:first-of-type {
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 .page-blog .content article h2 {
   font-family: 'Merriweather', serif;
@@ -290,11 +298,11 @@ footer .facebook a {
 }
 .page-blog .content article.has-thumbnail {
   position: relative;
-  min-height: 150px;
+  min-height: 160px;
 }
 .page-blog .content article.has-thumbnail img {
   position: absolute;
-  top: 7px;
+  top: 1.9rem;
   left: 0;
   border: 1px solid #dddbdb;
   background-color: #fff;
@@ -302,6 +310,10 @@ footer .facebook a {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  margin: 0;
+}
+.page-blog .content article.has-thumbnail:first-of-type img {
+  top: 0;
 }
 .page-blog .content article.has-thumbnail h2, .page-blog .content article.has-thumbnail p, .page-blog .content article.has-thumbnail a.more {
   margin-left: 240px;
