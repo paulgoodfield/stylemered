@@ -122,6 +122,31 @@ function smr_init()
 	$args['menu_icon']			= get_bloginfo( 'template_directory' ).'/custom/img/editorials.png';
 	
 	register_post_type( 'editorial', $args);
+
+	/* TESTIMONIALS ---------------------------------------------------- */
+	
+	$labels = array
+	(
+		'name' 					=> 'Testimonials',
+		'singular_name' 		=> 'Testimonial',
+		'add_new' 				=> 'Add New',
+		'add_new_item' 			=> 'Add New Testimonial',
+		'edit_item' 			=> 'Edit Testimonial',
+		'new_item' 				=> 'New Testimonial',
+		'view_item' 			=> 'View Testimonial',
+		'search_items' 			=> 'Search Testimonials',
+		'not_found' 			=> 'No Testimonials found',
+		'not_found_in_trash'	=> 'No Testimonials found in Trash',
+		'parent_item_colon' 	=> '',
+		'menu_name' 			=> 'Testimonials'
+	);
+	
+	$args['labels'] 			= $labels;
+	$args['supports'] 			= array( 'title', 'editor', 'page-attributes', 'thumbnail' );
+	$args['has_archive']		= false;
+	$args['menu_icon']			= get_bloginfo( 'template_directory' ).'/custom/img/testimonials.png';
+	
+	register_post_type( 'testimonial', $args);
 }
 add_action( 'init', 'smr_init' );
 
@@ -129,6 +154,7 @@ add_action( 'init', 'smr_init' );
 function smr_add_meta_boxes()
 {
 	add_meta_box( 'editorial-details', "Editorial Details", 'meta_views', 'editorial', 'advanced', 'default', array( 'id' => 'editorial-details' ) );
+	add_meta_box( 'testimonial-details', "Testimonial Details", 'meta_views', 'testimonial', 'advanced', 'default', array( 'id' => 'testimonial-details' ) );
 }
 add_action( 'add_meta_boxes', 'smr_add_meta_boxes' );
 
@@ -172,8 +198,7 @@ function smr_save_post( $post_id )
 	{
 		case 'testimonial':
 
-			array_push( $vals, 'page-title' );
-			array_push( $vals, 'description' );
+			array_push( $vals, 'job-title' );
 			break;
 	}
 

@@ -360,6 +360,23 @@ a.page-numbers:hover {
   font-size: 0.8em;
   color: #918e8e;
 }
+/* THEY SAID ---------------------------------------------------------------- */
+.page-they-said .content ul {
+  list-style: none;
+  padding: 0;
+}
+.page-they-said .content li {
+  margin-bottom: 3em;
+}
+.page-they-said .content h2 {
+  font-size: 2.1rem;
+}
+.page-they-said .content h2 span {
+  font-family: 'Merriweather', serif;
+  font-size: 0.7em;
+  text-transform: none;
+  color: #918e8e;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

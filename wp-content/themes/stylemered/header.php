@@ -11,7 +11,7 @@ $is_blog = ( is_page( 'blog' ) ) ? true : false;
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Style Me Red</title>
+        <title><?php bloginfo( 'name' ); ?> | <?php is_home() ? bloginfo( 'description' ) : wp_title(''); ?></title>
         <meta name="description" content="">
 
         <?php
