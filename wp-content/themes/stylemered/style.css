@@ -126,7 +126,7 @@ header {
   display: block;
   margin: 0 auto;
 }
-nav {
+nav.primary {
   font-family: 'Lato', sans-serif;
   font-size: 0.85em;
   text-transform: uppercase;
@@ -135,23 +135,23 @@ nav {
   padding: 1.5em 0;
   text-align: center;
 }
-nav ul {
+nav.primary ul {
   display: inline-block;
-  width: 700px;
+  width: 650px;
   margin: 0 auto;
   padding: 0;
 }
-nav li {
+nav.primary li {
   float: left;
   margin-left: 25px;
 }
-nav ul li:first-child {
+nav.primary ul li:first-child {
   margin: 0;
 }
-nav a {
+nav.primary a {
   color: #5e5b5b;
 }
-nav a:hover, nav .current-menu-item a {
+nav.primary a:hover, nav.primary .current-menu-item a {
   color: #cf242a;
 }
 .main {
@@ -168,8 +168,6 @@ aside {
   width: 230px;
   padding-left: 30px;
   color: #918e8e;
-}
-aside {
   font-size: 1.4rem;
 }
 aside h3 {
@@ -192,6 +190,11 @@ aside article p {
 }
 aside .twitter p {
   margin-bottom: 0.3em;
+}
+aside ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 2.3em;
 }
 footer {
   border-top: 1px solid #dddbdb;
@@ -265,7 +268,7 @@ footer .facebook a {
 .page-blog .content article h2 {
   font-family: 'Merriweather', serif;
   text-transform: none;
-  margin: 0 0 0.3em 0;
+  margin: 0 0 0.6em 0;
 }
 .page-blog .content article p {
   margin: 0;
@@ -278,9 +281,37 @@ footer .facebook a {
   position: absolute;
   top: 7px;
   left: 0;
+  border: 1px solid #dddbdb;
+  background-color: #fff;
+  padding: 4px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 .page-blog .content article.has-thumbnail h2, .page-blog .content article.has-thumbnail p, .page-blog .content article.has-thumbnail a.more {
-  margin-left: 230px;
+  margin-left: 240px;
+}
+.pagination {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.page-numbers {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  margin: 0 0.2em;
+  line-height: 1.7;
+}
+span.page-numbers {
+  background-color: #cf242a;
+}
+a.page-numbers {
+  background-color: #dddbdb;
+}
+a.page-numbers:hover {
+  background-color: #e77277;
+  color: #fff;
 }
 /* ==========================================================================
    Helper classes

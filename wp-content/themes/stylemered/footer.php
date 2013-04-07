@@ -2,17 +2,37 @@
 
         		<aside>
 
+                    <?php
+                    global $is_blog;
+                    if ( $is_blog == true )
+                    {
+                    ?>
+                    
+                    <h3>Categories</h3>
+
+                    <ul>
+                        <?php
+                        $args = array(
+                            'title_li'      => '',
+                            'show_count'    => 1
+                        );
+                        wp_list_categories( $args );
+                        ?>
+                    </ul>
+
+                    <?php } else { ?>
+
         			<h3>From the blog</h3>
 
                     <?php
-                    $args   = array(
+                        $args   = array(
 
-                        'numberposts'   => 1
-                    );
-                    $latest = get_posts( $args );
+                            'numberposts'   => 1
+                        );
+                        $latest = get_posts( $args );
 
-                    foreach( $latest as $l )
-                    {
+                        foreach( $latest as $l )
+                        {
                     ?>
 
         			<article>
@@ -23,7 +43,10 @@
 
         			</article>
 
-                    <?php } ?>
+                    <?php
+                        } // foreach( $latest)
+                    } // if ( is_page( 'blog' ) )
+                    ?>
 
                     <div class="twitter">
 

@@ -1,3 +1,8 @@
+<?php
+// Determine if we're on blog page before post loop
+global $is_blog;
+$is_blog = ( is_page( 'blog' ) ) ? true : false;
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -27,7 +32,7 @@
 
         		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/global/logo.png" class="logo"></a>
 
-        		<nav>
+        		<nav class="primary">
 
                     <?php
                     $defaults = array(
