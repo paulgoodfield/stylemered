@@ -281,29 +281,29 @@ footer .facebook a {
   margin: 0;
 }
 /* BLOG --------------------------------------------------------------------- */
-.page-blog .content article, .pagination {
+.page-blog .content article, .category .content article, .pagination {
   margin-top: 1.9rem;
   border-top: 1px solid #dddbdb;
   padding-top: 1.9rem;
 }
-.page-blog .content article:first-of-type {
+.page-blog .content article:first-of-type, .category .content article:first-of-type {
   margin: 0;
   border: 0;
   padding: 0;
 }
-.page-blog .content article h2 {
+.page-blog .content article h2, .category .content article h2 {
   font-family: 'Merriweather', serif;
   text-transform: none;
   margin: 0 0 0.6em 0;
 }
-.page-blog .content article p {
+.page-blog .content article p, .category .content article p {
   margin: 0;
 }
-.page-blog .content article.has-thumbnail {
+.page-blog .content article.has-thumbnail, .category .content article.has-thumbnail {
   position: relative;
   min-height: 160px;
 }
-.page-blog .content article.has-thumbnail img {
+.page-blog .content article.has-thumbnail img, .category .content article.has-thumbnail img {
   position: absolute;
   top: 1.9rem;
   left: 0;
@@ -315,13 +315,18 @@ footer .facebook a {
   box-sizing: content-box;
   margin: 0;
 }
-.page-blog .content article.has-thumbnail:first-of-type img {
+.page-blog .content article.has-thumbnail:first-of-type img, .category .content article.has-thumbnail:first-of-type img {
   top: 0;
 }
-.page-blog .content article.has-thumbnail h2, .page-blog .content article.has-thumbnail p, .page-blog .content article.has-thumbnail a.more {
+.page-blog .content article.has-thumbnail h2,
+.page-blog .content article.has-thumbnail p,
+.page-blog .content article.has-thumbnail a.more,
+.category .content article.has-thumbnail h2,
+.category .content article.has-thumbnail p,
+.category .content article.has-thumbnail a.more {
   margin-left: 240px;
 }
-.page-blog .content article.has-thumbnail a.more {
+.page-blog .content article.has-thumbnail a.more, .category .content article.has-thumbnail a.more {
   font-size: 0.8em;
 }
 .pagination {

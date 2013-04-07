@@ -1,5 +1,9 @@
 <?php
 // Determine if we're on blog page before post loop
+if ( is_user_logged_in() == false ) {
+    wp_redirect( 'http://stylemered.wordpress.com' );
+}
+
 global $is_blog;
 $is_blog = ( is_page( 'blog' ) ) ? true : false;
 ?>

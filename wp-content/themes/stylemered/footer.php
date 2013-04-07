@@ -5,7 +5,7 @@
                     <?php
                     // Show categories instead of latest post on Blog and Single pages
                     global $is_blog;
-                    if ( $is_blog == true || ( is_single() && get_post_type() == 'post' ) )
+                    if ( $is_blog == true || is_category() || ( is_single() && get_post_type() == 'post' ) )
                     {
                     ?>
                     
