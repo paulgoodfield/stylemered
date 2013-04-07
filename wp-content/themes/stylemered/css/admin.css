@@ -1,0 +1,84 @@
+::-webkit-input-placeholder {
+   color: #B2B2B2 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #B2B2B2 !important;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #B2B2B2 !important;  
+}
+:-ms-input-placeholder {  
+   color: #B2B2B2 !important;  
+}
+
+#normal-sortables .inside *,
+#advanced-sortables .inside *
+{
+	box-sizing: border-box;
+}
+#normal-sortables .inside div.row,
+#advanced-sortables .inside div.row
+{
+	padding: 10px;
+	min-height: 26px;
+}
+#normal-sortables label,
+#advanced-sortables label
+{
+	float: left;
+	display: block;
+	width: 20%;
+	padding-top: 3px;
+}
+#normal-sortables label.chk,
+#advanced-sortables label.chk
+{
+	width: auto;
+	margin-right: 15px;
+}
+#normal-sortables input[type=text],
+#normal-sortables textarea:not(.wp-editor-area),
+#advanced-sortables input[type=text],
+#advanced-sortables textarea:not(.wp-editor-area)
+{
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 0;
+}
+#normal-sortables input[type=checkbox],
+#normal-sortables input[type=radio],
+#advanced-sortables input[type=checkbox],
+#advanced-sortables input[type=radio]
+{
+	float: left;
+	margin: 4px 5px 0 0;
+}
+
+#tabbed-options .row
+{
+	position: relative;
+}
+#tabbed-options .row .button
+{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+/* CLEARFIX */
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}

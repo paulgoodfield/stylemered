@@ -54,7 +54,6 @@ add_action( 'wp_enqueue_scripts', 'smr_scripts_styles' );
 function smr_admin_enqueue_scripts()
 {
 	wp_enqueue_style( 'smr-admin-style', get_template_directory_uri().'/css/admin.css' );
-	wp_enqueue_script( 'smr-admin-script', get_template_directory_uri().'/js/admin.js', array( 'jquery' ), false, true );
 }
 add_action( 'admin_enqueue_scripts', 'smr_admin_enqueue_scripts' );
 
@@ -74,7 +73,7 @@ function smr_init()
 		'show_in_menu'			=> true
 	);
 
-	/* FEATURES ---------------------------------------------------- */
+	/* SLIDES ---------------------------------------------------- */
 	
 	$labels = array
 	(
@@ -98,13 +97,38 @@ function smr_init()
 	$args['menu_icon']			= get_bloginfo( 'template_directory' ).'/custom/img/slides.png';
 	
 	register_post_type( 'slide', $args);
+
+	/* EDITORIALS ---------------------------------------------------- */
+	
+	$labels = array
+	(
+		'name' 					=> 'Editorials',
+		'singular_name' 		=> 'Editorial',
+		'add_new' 				=> 'Add New',
+		'add_new_item' 			=> 'Add New Editorial',
+		'edit_item' 			=> 'Edit Editorial',
+		'new_item' 				=> 'New Editorial',
+		'view_item' 			=> 'View Editorial',
+		'search_items' 			=> 'Search Editorials',
+		'not_found' 			=> 'No Editorials found',
+		'not_found_in_trash'	=> 'No Editorials found in Trash',
+		'parent_item_colon' 	=> '',
+		'menu_name' 			=> 'Editorials'
+	);
+	
+	$args['labels'] 			= $labels;
+	$args['supports'] 			= array( 'title', 'page-attributes' );
+	$args['has_archive']		= false;
+	$args['menu_icon']			= get_bloginfo( 'template_directory' ).'/custom/img/editorials.png';
+	
+	register_post_type( 'editorial', $args);
 }
 add_action( 'init', 'smr_init' );
 
 // CREATE META BOXES
 function smr_add_meta_boxes()
 {
-	//add_meta_box( 'slide-details', "Feature Details", 'meta_views', 'feature', 'advanced', 'default', array( 'id' => 'feature-details' ) );
+	add_meta_box( 'editorial-details', "Editorial Details", 'meta_views', 'editorial', 'advanced', 'default', array( 'id' => 'editorial-details' ) );
 }
 add_action( 'add_meta_boxes', 'smr_add_meta_boxes' );
 
@@ -112,7 +136,7 @@ add_action( 'add_meta_boxes', 'smr_add_meta_boxes' );
 function meta_views( $post, $metabox )
 {
 	// Create nonce field for security
-	wp_nonce_field( 'bluegg-save-post', 'bluegg-nonce' );
+	wp_nonce_field( 'smr-save-post', 'smr-nonce' );
 
 	// Get all meta for this post
 	$vals = get_post_custom( $post->ID );
@@ -132,10 +156,10 @@ function meta_views( $post, $metabox )
 }
 
 // SAVE POST DATA
-function bluegg_save_post( $post_id )
+function smr_save_post( $post_id )
 {
 	// If WP is doing an autosave OR nonce doesn't match, don't update any meta fields
-	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ( !empty( $_POST ) && !wp_verify_nonce( $_REQUEST['bluegg-nonce'], 'bluegg-save-post' ) ) ) 
+	if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ( !empty( $_POST ) && !wp_verify_nonce( $_REQUEST['smr-nonce'], 'smr-save-post' ) ) ) 
 	{
 		return;
 	}
@@ -146,26 +170,10 @@ function bluegg_save_post( $post_id )
 	// Add meta field names to array, dependant on post type
 	switch( $_POST['post_type'] )
 	{
-		case 'page':
+		case 'testimonial':
 
 			array_push( $vals, 'page-title' );
 			array_push( $vals, 'description' );
-			break;
-
-		case 'project':
-
-			array_push( $vals, 'components' );
-			array_push( $vals, 'project-slides' );
-			break;
-
-		case 'doodle':
-
-			array_push( $vals, 'description' );
-			array_push( $vals, 'doodle-img' );
-
-		case 'feature':
-
-			array_push( $vals, 'link' );
 			break;
 	}
 
@@ -174,8 +182,50 @@ function bluegg_save_post( $post_id )
 	{
 		update_post_meta( $post_id, $v, $_POST[$v] );
 	}
+
+	// If pdf file has been uploaded
+	if ( $_FILES['download']['error'] == UPLOAD_ERR_OK )
+	{
+		// Get current attachments
+		$args = array(
+
+			'post_type' 		=> 'attachment',
+			'posts_per_page'	=> -1,
+			'post_parent'		=> $post_id,
+			'exclude'			=> get_post_thumbnail_id( $post_id )
+		);
+		$attachments = get_posts( $args );
+
+		// Delete each attachment
+		foreach( $attachments as $a )
+		{
+			wp_delete_attachment( $a->ID, true );
+		}
+
+		// Upload file
+		$file = wp_handle_upload( $_FILES['download'], array( 'test_form' => false ) );
+
+		// If uploaded successfully
+		if ( $file )
+		{
+			// Create attachment record for uploaded file
+			$data = array(
+
+				'post_title'		=> preg_replace( '/\.[^.]+$/', '', basename( $file['file'] ) ),
+				'post_content'		=> '',
+				'post_mime_type'	=> $file['type'],
+				'post_status'		=> 'inherit'
+			);
+			$attach_id = wp_insert_attachment( $data, $file['file'], $post_id );
+
+			// Generate required meta data for attachment
+			require_once( ABSPATH . 'wp-admin/includes/image.php' );
+			$attach_data = wp_generate_attachment_metadata( $attach_id, $file['file'] );
+			wp_update_attachment_metadata( $attach_id, $attach_data );
+		}
+	}
 }
-add_action( 'save_post', 'bluegg_save_post' );
+add_action( 'save_post', 'smr_save_post' );
 
 // STOP WP PUTTING P TAGS AROUND IMGS IN CONTENT
 /*function smr_the_content( $content )
