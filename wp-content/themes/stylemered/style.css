@@ -277,6 +277,9 @@ footer .facebook a {
 .home .content {
   padding: 0;
 }
+.content img {
+  margin: 0;
+}
 /* BLOG --------------------------------------------------------------------- */
 .page-blog .content article, .pagination {
   margin-top: 1.9rem;
