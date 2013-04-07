@@ -178,7 +178,7 @@ function bluegg_save_post( $post_id )
 add_action( 'save_post', 'bluegg_save_post' );
 
 // STOP WP PUTTING P TAGS AROUND IMGS IN CONTENT
-function smr_the_content( $content )
+/*function smr_the_content( $content )
 {
 	// Remove <p> tags around images
 	$html = preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
@@ -188,7 +188,7 @@ function smr_the_content( $content )
 	
 	return $html;
 }
-add_filter( 'the_content', 'smr_the_content' );
+add_filter( 'the_content', 'smr_the_content' );*/
 
 // MAKE SURE ADMIN POST FORM ACCEPTS FILES
 function smr_post_edit_form_tag()

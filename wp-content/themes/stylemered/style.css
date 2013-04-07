@@ -179,11 +179,12 @@ aside article {
 }
 aside article h4, aside article time {
   margin-bottom: 0.2em;
+  font-weight: 400;
 }
 aside time {
   display: block;
   font-size: 0.8em;
-  color: #b7b5b5;
+  color: #c3c2c2;
 }
 aside article p {
   margin-top: 0;
@@ -241,16 +242,30 @@ footer .facebook a {
   background: url(img/global/facebook.png) no-repeat 0 0;
 }
 /* PAGE --------------------------------------------------------------------- */
-.page .content h1 {
+.content h1 {
   margin: 0 0 1.5em 0;
 }
-.content img.alignleft {
+.content h2 {
+  font-size: 1.8rem;
+}
+.content img {
+  margin: 1.3em 0;
+}
+.content .alignleft {
   float: left;
   margin: 0 1.5em 1.5em 0;
 }
-.content img.alignright {
+.content .alignright {
   float: right;
   margin: 0 0 1.5em 1.5em;
+}
+.content .wp-caption {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #dddbdb;
+  color: #9e9b9b;
+}
+.content .wp-caption img {
+  margin-bottom: 0;
 }
 /* HOME --------------------------------------------------------------------- */
 .home .main {
