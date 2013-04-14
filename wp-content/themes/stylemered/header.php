@@ -34,7 +34,7 @@ $is_blog = ( is_page( 'blog' ) ) ? true : false;
 
         	<header>
 
-        		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/global/logo.png" class="logo"></a>
+        		<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/global/logo.png" width="244" height="105"></a>
 
         		<nav class="primary">
 

@@ -28,7 +28,7 @@ function smr_scripts_styles()
 	// Load normalize/main stylesheets
 	wp_enqueue_style( 'smr-google-fonts', 'http://fonts.googleapis.com/css?family=Merriweather:400,700|Lato:300' );
 	wp_enqueue_style( 'smr-normalize', get_template_directory_uri().'/css/normalize.css' );
-	wp_enqueue_style( 'smr-style', get_stylesheet_uri(), false, '060313' );
+	wp_enqueue_style( 'smr-style', get_stylesheet_uri(), false, '140413' );
 
 	// Load modernizr
 	wp_enqueue_script( 'smr-modernizr', get_template_directory_uri().'/js/vendor/modernizr-2.6.2.min.js' );
