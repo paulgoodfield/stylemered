@@ -152,7 +152,10 @@ nav.primary ul li:first-child {
 nav.primary a {
   color: #5e5b5b;
 }
-nav.primary a:hover, nav.primary .current-menu-item a {
+nav.primary a:hover,
+nav.primary .current-menu-item a,
+.single-post nav.primary .menu-item-59 a,
+.category nav.primary .menu-item-59 a {
   color: #cf242a;
 }
 .main {
