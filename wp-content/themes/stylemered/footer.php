@@ -34,13 +34,14 @@
 
                         foreach( $latest as $l )
                         {
+                            setup_postdata( $l );
                     ?>
 
         			<article>
 
         				<h4><a href="<?php echo get_permalink( $l->ID ); ?>"><?php echo $l->post_title; ?></a></h4>
                         <time datetime="<?php echo date( 'Y-m-d', strtotime( $l->post_date ) ); ?>"><?php echo date( 'jS M Y', strtotime( $l->post_date ) ); ?></time>
-        				<p><?php echo wp_trim_words( $l->post_content, 20 ); ?></p>
+        				<p><?php the_excerpt(); ?></p>
 
         			</article>
 
