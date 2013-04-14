@@ -281,6 +281,9 @@ footer .facebook a {
 .content img {
   margin: 0;
 }
+.home .flexslider {
+  min-width: 730px;
+}
 /* BLOG --------------------------------------------------------------------- */
 .page-blog .content article, .category .content article, .pagination {
   margin-top: 1.9rem;
