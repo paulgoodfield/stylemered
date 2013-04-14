@@ -112,7 +112,7 @@
 
                 <ul class="clearfix">
                     <li class="twitter"><a href="http://twitter.com/stylemeredred" rel="external"></a></li>
-                    <li class="facebook"><a href="#" rel="external"></a></li>
+                    <li class="facebook"><a href="http://www.facebook.com/pages/Style-Me-Red/529687507083720" rel="external"></a></li>
                 </ul>
 
             </footer>
