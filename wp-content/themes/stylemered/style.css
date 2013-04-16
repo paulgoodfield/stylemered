@@ -249,6 +249,9 @@ footer .facebook a {
   background: url(img/global/facebook.png) no-repeat 0 0;
 }
 /* PAGE --------------------------------------------------------------------- */
+.content {
+  width: 730px;
+}
 .content h1 {
   margin: 0 0 1.5em 0;
 }
@@ -285,7 +288,9 @@ footer .facebook a {
   margin: 0;
 }
 .home .flexslider {
-  min-width: 730px;
+  width: 730px !important;
+  height: 487px;
+  background: #ededed url(img/home/ajax-loader.gif) no-repeat center center;
 }
 /* BLOG --------------------------------------------------------------------- */
 .page-blog .content article, .category .content article, .pagination {
