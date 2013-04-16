@@ -12,7 +12,7 @@ $is_blog = ( is_page( 'blog' ) ) ? true : false;
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php bloginfo( 'name' ); ?> | <?php is_home() ? bloginfo( 'description' ) : wp_title(''); ?></title>
-        <meta name="description" content="">
+        <meta name="description" content="Claire Rees, Fashion Journalist and Stylist based in Cardiff, South Wales">
 
         <?php
         wp_head();
