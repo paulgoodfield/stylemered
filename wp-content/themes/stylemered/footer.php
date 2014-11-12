@@ -70,7 +70,7 @@
 
                             'include_entities'      => '1',
                             'include_rts'           => '1',
-                            'screen_name'           => 'stylemeredred',
+                            'screen_name'           => 'stylemered',
                             'count'                 => 2
                         ));
 
